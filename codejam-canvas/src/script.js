@@ -1,4 +1,4 @@
-async function getData(){
+async function fourOnFour(){
     const response = await fetch('https://raw.githubusercontent.com/rolling-scopes-school/tasks/master/tasks/stage-2/codejam-canvas/data/4x4.json')
     const myJson = await response.json();
     console.log(myJson[0][0]);
@@ -20,5 +20,4 @@ async function getData(){
         context.closePath();
     }
 }
-
-getData()
+//fourOnFour()
