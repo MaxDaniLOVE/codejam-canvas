@@ -2969,7 +2969,7 @@ fieldset:disabled a.btn {
 }
 
 .btn-lg, .btn-group-lg > .btn {
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 20px;
   font-size: 1.25rem;
   line-height: 1.5;
   border-radius: 0;
@@ -3278,6 +3278,7 @@ input[type="button"].btn-block {
 
 .btn-group,
 .btn-group-vertical {
+  width: 228px;
   position: relative;
   display: -ms-inline-flexbox;
   display: inline-flex;
