@@ -20,7 +20,7 @@ async function fourOnFour(){
         context.closePath();
     }
 }
-//fourOnFour()
+
 async function thirtyTwoOnThirtyTwo(){
     const response = await fetch('https://raw.githubusercontent.com/rolling-scopes-school/tasks/master/tasks/stage-2/codejam-canvas/data/32x32.json')
     const myJson = await response.json();
@@ -41,5 +41,19 @@ async function thirtyTwoOnThirtyTwo(){
         context.fillStyle = `rgba(${color[0]},${color[1]},${color[2]},${Math.ceil(color[3]/255)})`;
         context.fill();
         context.closePath();
+    }
+}
+
+function drawImage() {
+    var c = document.querySelector('.canvas');
+    var ctx = c.getContext("2d"),
+        width = c.width,
+        height = c.height;
+    var img = new Image;
+    ctx.fillStyle = "#000";
+    ctx.fillRect(0,0,c.width,c.height);
+    img.src = "../public/images/image.png"
+    img.onload = function () {
+        ctx.drawImage(img, 0, 0, width, height);
     }
 }
