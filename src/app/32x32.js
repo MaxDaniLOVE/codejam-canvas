@@ -1,4 +1,4 @@
-let thirtyTwoOnThirtyTwoMatrix = [
+export let thirtyTwoOnThirtyTwoMatrix = [
     [
       [
         255,
@@ -6208,5 +6208,4 @@ let thirtyTwoOnThirtyTwoMatrix = [
       ]
     ]
   ]
-  //console.log(thirtyTwoOnThirtyTwoMatrix);
   
