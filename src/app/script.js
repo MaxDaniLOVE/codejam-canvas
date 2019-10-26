@@ -5,46 +5,34 @@ let fourBtn = document.querySelector('.four'),
     thirtyTwoBtn = document.querySelector('.thirty'),
     imageBtn = document.querySelector('.image');
 
-    fourBtn.addEventListener('click', fourOnFour)
-    thirtyTwoBtn.addEventListener('click', thirtyTwoOnThirtyTwo)
-    imageBtn.addEventListener('click', drawImage)
+fourBtn.addEventListener('click',function(){drawMatrix(fourOnFourMatrix, 4)});
+thirtyTwoBtn.addEventListener('click', function(){drawMatrix(thirtyTwoOnThirtyTwoMatrix, 32)});
+imageBtn.addEventListener('click', drawImage);
 
-function fourOnFour(){
+function drawMatrix(colorMatrix, numOfCells){
     let canvas = document.querySelector('.canvas'),
-        context  = canvas.getContext('2d'),
-        width = canvas.width,
-        height = canvas.height;
+    context  = canvas.getContext('2d'),
+    width = canvas.width,
+    height = canvas.height;
 
-    for(let i = 0; i <= width - width/4; i += width/4)
-    for(let j = 0; j <= height - height/4; j += height/4)
+    for(let i = 0; i <= width - width/numOfCells; i += width/numOfCells)
+    for(let j = 0; j <= height - height/numOfCells; j += height/numOfCells)
     {   
-        let color = fourOnFourMatrix[i/(width/4)][j/(width/4)]
+        let color = colorMatrix[i/(width/numOfCells)][j/(width/numOfCells)]
         context.beginPath();
-        context.rect(j, i, width/4, width/4);
-        context.fillStyle = `#${color}`;
+        context.rect(j, i, width/numOfCells, width/numOfCells);
+        switch (numOfCells) {
+            case 4:
+                context.fillStyle = `#${color}`;
+                break;
+            case 32:
+                context.fillStyle = `rgba(${color[0]},${color[1]},${color[2]},${Math.ceil(color[3]/255)})`;
+                break;
+        }
         context.fill();
         context.closePath();
     }
 }
-
-function thirtyTwoOnThirtyTwo(){
-    let canvas = document.querySelector('.canvas'),
-        context  = canvas.getContext('2d'),
-        width = canvas.width,
-        height = canvas.height;
-
-    for(let i = 0; i <= width - width/32; i += width/32)
-    for(let j = 0; j <= height - height/32; j += height/32)
-    {   
-        let color = thirtyTwoOnThirtyTwoMatrix[i/(width/32)][j/(width/32)]
-        context.beginPath();
-        context.rect(j, i, width/32, width/32);
-        context.fillStyle = `rgba(${color[0]},${color[1]},${color[2]},${Math.ceil(color[3]/255)})`;
-        context.fill();
-        context.closePath();
-    }
-}
-
 function drawImage() {
     var c = document.querySelector('.canvas');
     var ctx = c.getContext("2d"),
