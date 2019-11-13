@@ -37,13 +37,13 @@ function drawMatrix(colorMatrix, numOfCells){
   }
 }
 function drawImage() {
-    var c = document.querySelector('.canvas');
-    var ctx = c.getContext("2d"),
-        width = c.width,
-        height = c.height;
+    var canvas = document.querySelector('.canvas');
+    var ctx = canvas.getContext("2d"),
+        width = canvas.width,
+        height = canvas.height;
     var img = new Image();
     ctx.fillStyle = "#000";
-    ctx.fillRect(0,0,c.width,c.height);
+    ctx.fillRect(0,0,canvas.width,canvas.height);
     img.src = "../public/images/image.png"
     img.onload = function () {
         ctx.drawImage(img, 0, 0, width, height);
