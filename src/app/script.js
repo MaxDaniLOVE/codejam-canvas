@@ -1,9 +1,9 @@
-import {fourOnFourMatrix as fourOnFourMatrix} from './4x4'
-import {thirtyTwoOnThirtyTwoMatrix as thirtyTwoOnThirtyTwoMatrix} from './32x32'
+import {fourOnFourMatrix } from './4x4'
+import {thirtyTwoOnThirtyTwoMatrix } from './32x32'
 
-let fourBtn = document.querySelector('.four'),
-    thirtyTwoBtn = document.querySelector('.thirty'),
-    imageBtn = document.querySelector('.image');
+let fourBtn = document.querySelector('.four-on-four-matrix-btn'),
+    thirtyTwoBtn = document.querySelector('.thirty-two-matrix-btn'),
+    imageBtn = document.querySelector('.image-draw-btn');
 
 fourBtn.addEventListener('click',function(){drawMatrix(fourOnFourMatrix, 4)});
 thirtyTwoBtn.addEventListener('click', function(){drawMatrix(thirtyTwoOnThirtyTwoMatrix, 32)});
@@ -14,9 +14,11 @@ function drawMatrix(colorMatrix, numOfCells){
     context  = canvas.getContext('2d'),
     width = canvas.width,
     height = canvas.height;
+    let pixelWidth = width/numOfCells;
+    let pixelHeight = height/numOfCells;
 
-    for(let i = 0; i <= width - width/numOfCells; i += width/numOfCells)
-    for(let j = 0; j <= height - height/numOfCells; j += height/numOfCells)
+    for(let i = 0; i <= width - pixelWidth; i += pixelWidth){
+    for(let j = 0; j <= height - pixelHeight; j += pixelHeight)
     {   
         let color = colorMatrix[i/(width/numOfCells)][j/(width/numOfCells)]
         context.beginPath();
@@ -32,13 +34,14 @@ function drawMatrix(colorMatrix, numOfCells){
         context.fill();
         context.closePath();
     }
+  }
 }
 function drawImage() {
     var c = document.querySelector('.canvas');
     var ctx = c.getContext("2d"),
         width = c.width,
         height = c.height;
-    var img = new Image;
+    var img = new Image();
     ctx.fillStyle = "#000";
     ctx.fillRect(0,0,c.width,c.height);
     img.src = "../public/images/image.png"
