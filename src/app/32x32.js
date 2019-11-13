@@ -1,4 +1,4 @@
-[
+export let thirtyTwoOnThirtyTwoMatrix = [
     [
       [
         255,
@@ -6208,3 +6208,4 @@
       ]
     ]
   ]
+  

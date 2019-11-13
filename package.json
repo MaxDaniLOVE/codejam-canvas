@@ -1,0 +1,24 @@
+{
+  "name": "canvas",
+  "version": "1.0.0",
+  "description": "https://maxdanilove.github.io/codejam-canvas/codejam-canvas",
+  "main": "script.js",
+  "scripts": {
+    "build": "node_modules/.bin/webpack --progress"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MaxDaniLOVE/codejam-canvas.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MaxDaniLOVE/codejam-canvas/issues"
+  },
+  "homepage": "https://github.com/MaxDaniLOVE/codejam-canvas#readme",
+  "dependencies": {
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.9",
+    "webpack-dev-server": "^3.9.0"
+  }
+}

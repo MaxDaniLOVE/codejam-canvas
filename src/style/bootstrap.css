@@ -4279,9 +4279,6 @@ input[type="button"].btn-block {
     -ms-flex-preferred-size: auto;
     flex-basis: auto;
   }
-  .navbar-expand-sm .navbar-toggler {
-    display: none;
-  }
 }
 
 @media (max-width: 767.98px) {
@@ -4321,9 +4318,6 @@ input[type="button"].btn-block {
     -ms-flex-preferred-size: auto;
     flex-basis: auto;
   }
-  .navbar-expand-md .navbar-toggler {
-    display: none;
-  }
 }
 
 @media (max-width: 991.98px) {
@@ -4362,9 +4356,6 @@ input[type="button"].btn-block {
     display: flex !important;
     -ms-flex-preferred-size: auto;
     flex-basis: auto;
-  }
-  .navbar-expand-lg .navbar-toggler {
-    display: none;
   }
 }
 
